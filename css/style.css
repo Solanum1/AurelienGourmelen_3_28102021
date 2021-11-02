@@ -29,10 +29,13 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'shrikhandregular', sans-serif ;
 }
 
-p, a {
+p, a, span, input {
     font-family: 'robotoregular', sans-serif;
 }
 
+body {
+    margin: 0;
+}
 
 /*----------Header----------*/
 
@@ -43,3 +46,72 @@ p, a {
     width: 150px;
     height: auto;
 }
+/*----------Button----------*/
+
+.btn {
+    padding: 12px;
+    border-radius: 20px;
+    background-color: #ff79da;
+    color: white;
+}
+
+
+/*----------Location----------*/
+
+.location {
+    background-color: #f6f6f6;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 50px;
+}
+
+.location__search {
+    background-color: #eaeaea;
+    border-top: 2px solid rgba(128, 128, 128, 0.33);
+    font-size: 14px;
+    text-align: center;
+    padding: 10px 0 10px 0;
+    width: 100%;
+    margin: auto;
+}
+
+.location__search label {
+    font-size: 16px;
+    padding-right: 10px;
+    margin-left: 50px;
+}
+
+.location__search input {
+    background-color: #eaeaea;
+    border: none;
+    font-size: 16px;
+}
+
+input:focus {
+    outline: none;
+}
+
+.location__heading {
+    text-align: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 0%;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+.location__heading p{
+    margin-bottom: 0;
+}
+
+.location__slogan {
+    text-align: center;
+    font-size: 16px;
+    font-weight: normal;
+    color:rgba(128, 128, 128);
+    padding-bottom: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
