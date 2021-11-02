@@ -1,0 +1,13 @@
+body {
+    margin: auto;
+}
+
+/*----------Header----------*/
+
+.logo {
+    text-align: center;
+}
+.logo img {
+    width: 150px;
+    height: auto;
+}
