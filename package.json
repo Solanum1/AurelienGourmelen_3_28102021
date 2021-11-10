@@ -1,0 +1,19 @@
+{
+  "name": "p3_ohmyfood",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch ./sass/main.scss:./css/style.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Solanum1/AurelienGourmelen_3_28102021.git"
+  },
+  "author": "aurelien",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Solanum1/AurelienGourmelen_3_28102021/issues"
+  },
+  "homepage": "https://github.com/Solanum1/AurelienGourmelen_3_28102021#readme"
+}
