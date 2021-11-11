@@ -67,8 +67,14 @@ body {
 .btn {
   padding: 12px;
   border-radius: 20px;
-  background-color: #FF79DA;
-  color: white;
+  background: linear-gradient(#FF79DA, #9356DC);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 4px 4px 4px #dddddd;
+}
+.btn:hover {
+  box-shadow: 4px 4px 4px #b7b7b7;
+  background: linear-gradient(#ff93e1, #a16be0);
 }
 
 /*----------Location----------*/
@@ -131,12 +137,22 @@ input:focus {
 }
 
 /*----------Working----------*/
-.working h2 {
+.working__container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 769px) {
+  .working__container {
+    flex-wrap: wrap;
+    flex-direction: row;
+  }
+}
+.working__container h2 {
   padding-left: 5%;
-  font-family: "robotoregular";
 }
 
-.working__block {
+.working {
   display: flex;
   flex-direction: row;
   background-color: #f6f6f6;
@@ -145,38 +161,40 @@ input:focus {
   border-radius: 20px;
   box-shadow: 5px 5px 5px #eaeaea;
   max-width: 350px;
+  cursor: pointer;
 }
-
+.working:hover {
+  background-color: #f2eafb;
+}
+.working:hover .working__fas {
+  color: #9356DC;
+}
 .working__number {
   height: 24px;
   width: 27px;
   border-radius: 50%;
   background-color: #9356DC;
-  color: white;
+  color: #fff;
   text-align: center;
   position: relative;
   right: 10px;
   padding-top: 3px;
 }
-
 .working__fas {
   color: #7e7e7e;
   font-size: 18px;
   padding: 0 25px 0 15px;
 }
 
-.fa-mobile-alt:hover {
-  color: #9356DC;
+/* .fa-mobile-alt:hover {
+    color: $color-primary;
 }
-
 .fa-store:hover {
-  color: #9356DC;
+    color: $color-primary; 
 }
-
 .fa-list-ul:hover {
-  color: #9356DC;
-}
-
+    color: $color-primary;
+} */
 /*----------Restaurants----------*/
 .container-restaurants {
   background: #f6f6f6;

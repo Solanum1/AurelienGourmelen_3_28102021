@@ -33,10 +33,15 @@ body {
 .btn {
     padding: 12px;
     border-radius: 20px;
-    background-color: $color-secondary;
-    color: white;
+    background: linear-gradient($color-secondary, $color-primary);
+    color: $color-white;
+    cursor: pointer;
+    box-shadow: 4px 4px 4px $color-middle-gray;
+    &:hover {
+        box-shadow: 4px 4px 4px darken($color-middle-gray, 15%); 
+        background: linear-gradient(lighten($color-secondary, 5%), lighten($color-primary, 5%));
+    }
 }
-
 
 /*----------Location----------*/
 
@@ -99,40 +104,53 @@ input:focus {
 
 /*----------Working----------*/
 
-.working h2 {
-    padding-left: 5%;
-    font-family: 'robotoregular';
+.working__container {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    @media (min-width: 769px) {
+        flex-wrap: wrap;
+        flex-direction: row;
+    }
+    & h2 {
+        padding-left: 5%;
+    }
 }
 
-.working__block {
+.working {
     display: flex;
     flex-direction: row;
-    background-color: #f6f6f6;
+    background-color: $color-lite-gray;
     padding: 20px 0 20px 0;
     margin: 0 10% 30px 10%;
     border-radius: 20px;
     box-shadow: 5px 5px 5px #eaeaea;
     max-width: 350px;
+    cursor: pointer;
+    &:hover{
+        background-color: lighten($color-primary, 35%);
+    }
+    &:hover &__fas{
+        color: $color-primary;
+    }
+    &__number {
+        height: 24px;
+        width: 27px;
+        border-radius: 50%;
+        background-color: $color-primary;
+        color:$color-white;
+        text-align: center;
+        position : relative;
+        right: 10px;
+        padding-top: 3px;
+    }
+    &__fas {
+        color: #7e7e7e;
+        font-size: 18px;
+        padding: 0 25px 0 15px;
+    }
 }
-
-.working__number {
-    height: 24px;
-    width: 27px;
-    border-radius: 50%;
-    background-color: $color-primary;
-    color: white;
-    text-align: center;
-    position : relative;
-    right: 10px;
-    padding-top: 3px;
-}
-
-.working__fas {
-    color: #7e7e7e;
-    font-size: 18px;
-    padding: 0 25px 0 15px;
-}
-.fa-mobile-alt:hover {
+/* .fa-mobile-alt:hover {
     color: $color-primary;
 }
 .fa-store:hover {
@@ -140,7 +158,7 @@ input:focus {
 }
 .fa-list-ul:hover {
     color: $color-primary;
-}
+} */
 
 /*----------Restaurants----------*/
 .container-restaurants {
