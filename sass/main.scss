@@ -1,10 +1,12 @@
 @import "./base/typography";
 @import "./utils/variables";
+@import "./utils/mixin";
 @import "./layouts/footer";
 
 
 
 /*----------General----------*/
+
 
 h1 {
     font-family: 'shrikhandregular', sans-serif ;
@@ -16,6 +18,7 @@ p, a, span, input, h2, h3, h4, h5, h6 {
 
 body {
     margin: 0;
+    box-sizing: border-box;
 }
 
 /*----------Header----------*/
@@ -30,13 +33,15 @@ body {
 
 /*----------Button----------*/
 
-.btn {
+.location__button {
     padding: 12px;
     border-radius: 20px;
     background: linear-gradient($color-secondary, $color-primary);
+    background-color: $color-secondary;
     color: $color-white;
     cursor: pointer;
     box-shadow: 4px 4px 4px $color-middle-gray;
+    transition: background-color 500ms;
     &:hover {
         box-shadow: 4px 4px 4px darken($color-middle-gray, 15%); 
         background: linear-gradient(lighten($color-secondary, 5%), lighten($color-primary, 5%));
@@ -106,14 +111,22 @@ input:focus {
 
 .working__container {
     margin: auto;
-    display: flex;
-    flex-direction: column;
-    @media (min-width: 769px) {
-        flex-wrap: wrap;
-        flex-direction: row;
-    }
     & h2 {
         padding-left: 5%;
+        @include medium {
+            padding-left: 0;
+            text-align: center;
+        }
+    }
+}
+
+.working__step {
+    display: flex;
+    flex-direction: column;
+    @include medium {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
 
@@ -125,8 +138,12 @@ input:focus {
     margin: 0 10% 30px 10%;
     border-radius: 20px;
     box-shadow: 5px 5px 5px #eaeaea;
-    max-width: 350px;
+    min-width: 290px;
+    max-width: 320px;
     cursor: pointer;
+        @include medium {
+        margin: 0 20px 30px 20px;
+    }
     &:hover{
         background-color: lighten($color-primary, 35%);
     }
@@ -150,22 +167,28 @@ input:focus {
         padding: 0 25px 0 15px;
     }
 }
-/* .fa-mobile-alt:hover {
-    color: $color-primary;
-}
-.fa-store:hover {
-    color: $color-primary; 
-}
-.fa-list-ul:hover {
-    color: $color-primary;
-} */
 
 /*----------Restaurants----------*/
-.container-restaurants {
+.restaurants-container {
     background: #f6f6f6;
     padding: 20px 0 20px 0;
     & h2 {
         padding-left: 5%;
+        @include medium {
+            padding-left: 0;
+            text-align: center;
+        }
+    }
+}
+
+.restaurants-cards {
+    display: flex;
+    flex-direction: column;
+    @include medium {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0 5% 0 5%;
     }
 }
 
@@ -226,5 +249,11 @@ input:focus {
     &__like {
         font-size: 22px;
         padding-right: 30px;
+        & i.fas {
+            color:$color-primary;
+        }
+        & i.far:hover {
+            color: $color-primary;
+        }
     }
 }

@@ -17,20 +17,40 @@ footer {
   background-color: #353535;
   color: #fff;
   padding: 0 0 10px 0;
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  footer {
+    flex-direction: row;
+    justify-content: space-between;
+  }
 }
 footer h2 {
   font-family: "shrikhandregular";
   font-size: 1.4em;
   padding: 20px 0 0 20px;
-  margin-top: 0;
+  margin: 0;
   font-weight: 300;
 }
 footer ul {
   list-style-type: none;
   padding-left: 20px;
+  display: flex;
+  flex-direction: column;
 }
 footer ul li {
   padding-bottom: 5px;
+}
+@media (min-width: 768px) {
+  footer ul li {
+    margin-right: 20px;
+  }
+}
+@media (min-width: 768px) {
+  footer ul {
+    flex-direction: row;
+  }
 }
 footer a {
   text-decoration: none;
@@ -51,6 +71,7 @@ p, a, span, input, h2, h3, h4, h5, h6 {
 
 body {
   margin: 0;
+  box-sizing: border-box;
 }
 
 /*----------Header----------*/
@@ -64,15 +85,17 @@ body {
 }
 
 /*----------Button----------*/
-.btn {
+.location__button {
   padding: 12px;
   border-radius: 20px;
   background: linear-gradient(#FF79DA, #9356DC);
+  background-color: #FF79DA;
   color: #fff;
   cursor: pointer;
   box-shadow: 4px 4px 4px #dddddd;
+  transition: background-color 500ms;
 }
-.btn:hover {
+.location__button:hover {
   box-shadow: 4px 4px 4px #b7b7b7;
   background: linear-gradient(#ff93e1, #a16be0);
 }
@@ -139,17 +162,27 @@ input:focus {
 /*----------Working----------*/
 .working__container {
   margin: auto;
-  display: flex;
-  flex-direction: column;
-}
-@media (min-width: 769px) {
-  .working__container {
-    flex-wrap: wrap;
-    flex-direction: row;
-  }
 }
 .working__container h2 {
   padding-left: 5%;
+}
+@media (min-width: 768px) {
+  .working__container h2 {
+    padding-left: 0;
+    text-align: center;
+  }
+}
+
+.working__step {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .working__step {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
 
 .working {
@@ -160,8 +193,14 @@ input:focus {
   margin: 0 10% 30px 10%;
   border-radius: 20px;
   box-shadow: 5px 5px 5px #eaeaea;
-  max-width: 350px;
+  min-width: 290px;
+  max-width: 320px;
   cursor: pointer;
+}
+@media (min-width: 768px) {
+  .working {
+    margin: 0 20px 30px 20px;
+  }
 }
 .working:hover {
   background-color: #f2eafb;
@@ -186,22 +225,32 @@ input:focus {
   padding: 0 25px 0 15px;
 }
 
-/* .fa-mobile-alt:hover {
-    color: $color-primary;
-}
-.fa-store:hover {
-    color: $color-primary; 
-}
-.fa-list-ul:hover {
-    color: $color-primary;
-} */
 /*----------Restaurants----------*/
-.container-restaurants {
+.restaurants-container {
   background: #f6f6f6;
   padding: 20px 0 20px 0;
 }
-.container-restaurants h2 {
+.restaurants-container h2 {
   padding-left: 5%;
+}
+@media (min-width: 768px) {
+  .restaurants-container h2 {
+    padding-left: 0;
+    text-align: center;
+  }
+}
+
+.restaurants-cards {
+  display: flex;
+  flex-direction: column;
+}
+@media (min-width: 768px) {
+  .restaurants-cards {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 5% 0 5%;
+  }
 }
 
 .card {
@@ -261,6 +310,12 @@ input:focus {
 .card__like {
   font-size: 22px;
   padding-right: 30px;
+}
+.card__like i.fas {
+  color: #9356DC;
+}
+.card__like i.far:hover {
+  color: #9356DC;
 }
 
 /*# sourceMappingURL=style.css.map */
