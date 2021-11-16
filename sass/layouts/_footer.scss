@@ -30,11 +30,13 @@ flex-direction: column;
     @include medium {
         flex-direction: row;
         }
-
     }
     & a {
     text-decoration: none;
     color: $color-white;
+        &:hover {
+            color: lighten($color-primary, 10%);
+        }
     }
     & span {
         padding-right: 10px;

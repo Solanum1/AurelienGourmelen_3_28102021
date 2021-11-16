@@ -31,23 +31,6 @@ body {
     height: auto;
 }
 
-/*----------Button----------*/
-
-.location__button {
-    padding: 12px;
-    border-radius: 20px;
-    background: linear-gradient($color-secondary, $color-primary);
-    background-color: $color-secondary;
-    color: $color-white;
-    cursor: pointer;
-    box-shadow: 4px 4px 4px $color-middle-gray;
-    transition: background-color 500ms;
-    &:hover {
-        box-shadow: 4px 4px 4px darken($color-middle-gray, 15%); 
-        background: linear-gradient(lighten($color-secondary, 5%), lighten($color-primary, 5%));
-    }
-}
-
 /*----------Location----------*/
 
 .location {
@@ -57,55 +40,67 @@ body {
     justify-content: center;
     align-items: center;
     padding-bottom: 50px;
-}
-
-.location__search {
-    background-color: #eaeaea;
-    border-top: 2px solid rgba(128, 128, 128, 0.33);
-    font-size: 14px;
-    text-align: center;
-    padding: 10px 0 10px 0;
-    width: 100%;
-    margin: auto;
-}
-
-.location__search label {
-    font-size: 16px;
-    padding-right: 10px;
-    margin-left: 50px;
-}
-
-.location__search input {
-    background-color: #eaeaea;
-    border: none;
-    font-size: 16px;
+    &__search {
+        background-color: #eaeaea;
+        border-top: 2px solid rgba(128, 128, 128, 0.33);
+        font-size: 14px;
+        text-align: center;
+        padding: 10px 0 10px 0;
+        width: 100%;
+        margin: auto;
+    }
+    &__search label {
+        font-size: 16px;
+        padding-right: 10px;
+        margin-left: 50px;
+    }
+    &__search input {
+        background-color: #eaeaea;
+        border: none;
+        font-size: 16px;
+    }
+    &__heading {
+        text-align: center;
+        font-size: 22px;
+        font-weight: bold;
+        margin-bottom: 0%;
+        margin-left: 15%;
+        margin-right: 15%;
+    }
+    &__heading p{
+        margin-bottom: 0;
+    }
+    &__slogan {
+        text-align: center;
+        font-size: 16px;
+        font-weight: normal;
+        color:rgba(128, 128, 128);
+        padding-bottom: 20px;
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    &__button {
+        padding: 12px;
+        border-radius: 20px;
+        background: linear-gradient($color-secondary, $color-primary);
+        background-color: $color-secondary;
+        color: $color-white;
+        cursor: pointer;
+        box-shadow: 4px 4px 4px $color-middle-gray;
+        transform: scale(1);
+        transition: all 500ms;
+        &:hover {
+            transform: scale(1.1);
+            box-shadow: 4px 4px 4px darken($color-middle-gray, 15%); 
+            background: linear-gradient(lighten($color-secondary, 5%), lighten($color-primary, 5%));
+        }
+    }
 }
 
 input:focus {
     outline: none;
 }
 
-.location__heading {
-    text-align: center;
-    font-size: 22px;
-    font-weight: bold;
-    margin-bottom: 0%;
-    margin-left: 15%;
-    margin-right: 15%;
-}
-.location__heading p{
-    margin-bottom: 0;
-}
-
-.location__slogan {
-    text-align: center;
-    font-size: 16px;
-    font-weight: normal;
-    color:rgba(128, 128, 128);
-    padding-bottom: 20px;
-    margin-left: 10%;
-    margin-right: 10%;
-}
 
 /*----------Working----------*/
 
@@ -141,10 +136,13 @@ input:focus {
     min-width: 290px;
     max-width: 320px;
     cursor: pointer;
+    transform: scale(1);
+    transition: transform 500ms;
         @include medium {
         margin: 0 20px 30px 20px;
     }
     &:hover{
+        transform: scale(1.10);
         background-color: lighten($color-primary, 35%);
     }
     &:hover &__fas{
@@ -187,8 +185,7 @@ input:focus {
     @include medium {
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: center;
-        margin: 0 5% 0 5%;
+        justify-content: space-around;
     }
 }
 
@@ -196,9 +193,16 @@ input:focus {
     width: 350px;
     background-color: $color-white;
     border-radius: 20px;
-    margin: auto;
-    margin-bottom: 20px;
+    margin-left: 10%;
+    margin-bottom: 30px;
     box-shadow: 5px 5px 3px #eaeaea;
+    @include medium {
+        margin: 0 3% 30px 3%;
+    }
+    @include large {
+        margin: 0 1% 30px 1%;
+    }
+
     & a {
         text-decoration: none;
         color: $color-black;
