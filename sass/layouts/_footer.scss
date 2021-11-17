@@ -34,6 +34,7 @@ flex-direction: column;
     & a {
     text-decoration: none;
     color: $color-white;
+    transition: all 500ms;
         &:hover {
             color: lighten($color-primary, 10%);
         }

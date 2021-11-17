@@ -29,6 +29,12 @@ body {
 .logo img {
     width: 150px;
     height: auto;
+    @include medium {
+        width: 225px;
+    }
+    @include large {
+        width: 300px;
+    }
 }
 
 /*----------Location----------*/
@@ -86,12 +92,12 @@ body {
         background-color: $color-secondary;
         color: $color-white;
         cursor: pointer;
-        box-shadow: 4px 4px 4px $color-middle-gray;
+        box-shadow: 5px 5px 5px $color-middle-gray;
         transform: scale(1);
         transition: all 500ms;
         &:hover {
-            transform: scale(1.1);
-            box-shadow: 4px 4px 4px darken($color-middle-gray, 15%); 
+            transform: scale(1.05);
+            box-shadow: 5px 5px 5px $color-gray; 
             background: linear-gradient(lighten($color-secondary, 5%), lighten($color-primary, 5%));
         }
     }
@@ -130,20 +136,21 @@ input:focus {
     flex-direction: row;
     background-color: $color-lite-gray;
     padding: 20px 0 20px 0;
-    margin: 0 10% 30px 10%;
+    margin: 0 10% 30px 5%;
     border-radius: 20px;
     box-shadow: 5px 5px 5px #eaeaea;
-    min-width: 290px;
-    max-width: 320px;
+    width: 350px;
     cursor: pointer;
     transform: scale(1);
     transition: transform 500ms;
         @include medium {
-        margin: 0 20px 30px 20px;
-    }
+            width: 300px;
+            margin: 0 3% 30px 3%;
+        }
     &:hover{
-        transform: scale(1.10);
+        transform: scale(1.05);
         background-color: lighten($color-primary, 35%);
+        box-shadow: 5px 5px 5px $color-gray;
     }
     &:hover &__fas{
         color: $color-primary;
@@ -171,9 +178,9 @@ input:focus {
     background: #f6f6f6;
     padding: 20px 0 20px 0;
     & h2 {
-        padding-left: 5%;
+        margin-left: 5%;
         @include medium {
-            padding-left: 0;
+            margin-left: 0;
             text-align: center;
         }
     }
@@ -193,16 +200,21 @@ input:focus {
     width: 350px;
     background-color: $color-white;
     border-radius: 20px;
-    margin-left: 10%;
+    margin-left: 5%;
     margin-bottom: 30px;
     box-shadow: 5px 5px 3px #eaeaea;
+    transform: scale(1);
+    transition: transform 500ms;
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 5px 5px 5px $color-gray;
+    }
     @include medium {
         margin: 0 3% 30px 3%;
     }
     @include large {
         margin: 0 1% 30px 1%;
     }
-
     & a {
         text-decoration: none;
         color: $color-black;
@@ -250,29 +262,20 @@ input:focus {
         margin-top: 0;
         font-size: 1em;
     }
-    &__like i{
-        font-size: 22px;
-        margin-right: 30px;
-        position: relative;
-        background: $color-white;
-        z-index: 1;
-        &:hover {
-            &::after {
-                opacity: 1;
-            }
-        }
-        &::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            right: 0;
-            bottom: 0;
-            left: 0;
-            background: linear-gradient($color-primary, $color-secondary);
-            opacity: 0;
-            z-index: -1;
-            transition: opacity 500ms;
+    &__like i {
+        font-weight:100;
+        font-size: 28px;
+        padding: 5px;
+        margin: 10px 15px 25px 10px;
+        cursor: pointer;
+            &:hover:before { 
+            transition: all 500ms ease-in-out;
+            background-image: linear-gradient($color-primary, $color-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight:bold;
         }
     }
+
 
 }

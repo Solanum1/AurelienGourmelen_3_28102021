@@ -52,7 +52,10 @@ main {
     & h2 {
         font-size: 1.2em;
         text-transform: uppercase ;
-        margin-left: 3%;
+        margin-left: 5%;
+        padding-bottom: 2px;
+        border-bottom: 3px solid $color-tertiary;
+        width: 50px;
 
     }
 }
@@ -61,8 +64,8 @@ main {
     background-color: $color-white;
     padding: 10px 3% 10px 3%;
     border-radius: 15px;
-    font-size: 1rem;
-    margin: 10px 3% 10px 3%;
+    margin: 10px 5% 15px 5%;
+    height: 50px;
     cursor: pointer;
     box-shadow: 5px 5px 5px #eaeaea;
     display: flex;
@@ -91,7 +94,7 @@ main {
 
 .menu-check {
     width: 0%;
-    height: 50px;
+    height: 70px;
     margin: 0;
     padding: 0;
     background-color: $color-tertiary;
@@ -112,5 +115,29 @@ main {
         span {
             transform:rotate(1turn);
         }
+    }
+}
+
+
+/*----------Button----------*/
+.button {
+    width: 200px;
+    text-align: center;
+    padding: 12px;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 50px;
+    border-radius: 20px;
+    background: linear-gradient($color-secondary, $color-primary);
+    background-color: $color-secondary;
+    color: $color-white;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px $color-middle-gray;
+    transform: scale(1);
+    transition: all 500ms;
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 5px 5px 5px $color-gray; 
+        background: linear-gradient(lighten($color-secondary, 5%), lighten($color-primary, 5%));
     }
 }

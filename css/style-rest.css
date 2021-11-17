@@ -76,6 +76,7 @@ footer ul li {
 footer a {
   text-decoration: none;
   color: #fff;
+  transition: all 500ms;
 }
 footer a:hover {
   color: #ae80e5;
@@ -128,15 +129,18 @@ main {
 .menu h2 {
   font-size: 1.2em;
   text-transform: uppercase;
-  margin-left: 3%;
+  margin-left: 5%;
+  padding-bottom: 2px;
+  border-bottom: 3px solid #99E2D0;
+  width: 50px;
 }
 
 .menu-container {
   background-color: #fff;
   padding: 10px 3% 10px 3%;
   border-radius: 15px;
-  font-size: 1rem;
-  margin: 10px 3% 10px 3%;
+  margin: 10px 5% 15px 5%;
+  height: 50px;
   cursor: pointer;
   box-shadow: 5px 5px 5px #eaeaea;
   display: flex;
@@ -165,7 +169,7 @@ main {
 
 .menu-check {
   width: 0%;
-  height: 50px;
+  height: 70px;
   margin: 0;
   padding: 0;
   background-color: #99E2D0;
@@ -187,6 +191,29 @@ main {
 }
 .menu-check:hover span {
   transform: rotate(1turn);
+}
+
+/*----------Button----------*/
+.button {
+  width: 200px;
+  text-align: center;
+  padding: 12px;
+  margin: auto;
+  margin-top: 30px;
+  margin-bottom: 50px;
+  border-radius: 20px;
+  background: linear-gradient(#FF79DA, #9356DC);
+  background-color: #FF79DA;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 5px 5px 5px #dddddd;
+  transform: scale(1);
+  transition: all 500ms;
+}
+.button:hover {
+  transform: scale(1.05);
+  box-shadow: 5px 5px 5px #808080;
+  background: linear-gradient(#ff93e1, #a16be0);
 }
 
 /*# sourceMappingURL=style-rest.css.map */
