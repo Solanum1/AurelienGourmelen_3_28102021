@@ -250,14 +250,29 @@ input:focus {
         margin-top: 0;
         font-size: 1em;
     }
-    &__like {
+    &__like i{
         font-size: 22px;
-        padding-right: 30px;
-        & i.fas {
-            color:$color-primary;
+        margin-right: 30px;
+        position: relative;
+        background: $color-white;
+        z-index: 1;
+        &:hover {
+            &::after {
+                opacity: 1;
+            }
         }
-        & i.far:hover {
-            color: $color-primary;
+        &::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: linear-gradient($color-primary, $color-secondary);
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 500ms;
         }
     }
+
 }

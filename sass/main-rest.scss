@@ -1,0 +1,116 @@
+@import "./base/typography";
+@import "./utils/variables";
+@import "./utils/mixin";
+@import "./layouts/header";
+@import "./layouts/footer";
+
+body {
+    margin: 0;
+    /* box-sizing: border-box; */
+}
+* {
+    font-family: 'robotoregular', sans-serif;
+}
+h1 {
+    font-family: 'shrikhandregular', sans-serif ;
+}
+
+
+main {
+    background-color: $color-lite-gray;
+}
+
+/*----------Heading----------*/
+
+.heading {
+    &__top img{
+        min-height: 220px;
+        width: 100%; 
+        object-fit: cover;
+        margin-top: -20px;
+    }
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        padding: 30px 20px 0 20px;
+        border: 1px solid $color-lite-gray;
+        background-color: $color-lite-gray;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        position: relative;
+        top: -30px;
+    }
+    &__title h1 {
+        font-size: 1.6em;
+        margin-top: 0;
+    }
+}
+
+/*--------Menu----------*/
+
+.menu {
+    & h2 {
+        font-size: 1.2em;
+        text-transform: uppercase ;
+        margin-left: 3%;
+
+    }
+}
+
+.menu-container {
+    background-color: $color-white;
+    padding: 10px 3% 10px 3%;
+    border-radius: 15px;
+    font-size: 1rem;
+    margin: 10px 3% 10px 3%;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px #eaeaea;
+    display: flex;
+    justify-content: space-between;
+}
+
+.menu-card{
+    flex: 2;
+    &__title {
+        font-weight: bold;
+        padding-bottom: 5px;
+    }
+    &__bottom {
+        display: flex;
+        justify-content: space-between;
+    }
+    &__description {
+        font-size: 0.9em;
+    }
+    &__price {
+        font-weight: bold;
+        font-size: 0.9em;
+        padding-right: 10px;
+    }
+}
+
+.menu-check {
+    width: 0%;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    background-color: $color-tertiary;
+    color: $color-white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    border-radius: 15px;
+    transition: transform 1000ms ease-in-out;
+    span {
+        display:block;
+        transform:rotate(0turn);
+        transition:transform 300ms ease-in-out 150ms; 
+    }
+    &:hover {
+        width: 45px;
+        transform: translateX(-45px);
+        span {
+            transform:rotate(1turn);
+        }
+    }
+}
