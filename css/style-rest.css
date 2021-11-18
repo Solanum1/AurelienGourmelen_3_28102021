@@ -20,6 +20,7 @@
   position: relative;
   top: -10px;
   text-align: center;
+  margin: 0 50px;
 }
 .header__logo img {
   width: 150px;
@@ -187,7 +188,7 @@ main {
 }
 .menu-check:hover {
   width: 45px;
-  transform: translateX(-45px);
+  /* transform: translateX(-45px); */
 }
 .menu-check:hover span {
   transform: rotate(1turn);

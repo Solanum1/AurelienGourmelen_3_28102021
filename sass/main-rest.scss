@@ -111,7 +111,7 @@ main {
     }
     &:hover {
         width: 45px;
-        transform: translateX(-45px);
+        /* transform: translateX(-45px); */
         span {
             transform:rotate(1turn);
         }
