@@ -9,7 +9,8 @@
 
 body {
     margin: 0;
-    /* box-sizing: border-box; */
+    background-color: $color-lite-gray;
+    box-sizing: border-box;
 }
 * {
     font-family: 'robotoregular', sans-serif;
@@ -30,7 +31,6 @@ main {
         padding-bottom: 2px;
         border-bottom: 3px solid $color-tertiary;
         width: 50px;
-
     }
 }
 

@@ -1,6 +1,5 @@
 .header {
     height: 450px;
-    background-color: $color-lite-gray;
     &__logo {
         position: relative;
         top: -10px;
@@ -36,7 +35,7 @@
         border-top-left-radius: 40px;
         border-top-right-radius: 40px;
         position: relative;
-        top: -35px;
+        top: -40px;
     }
     &__title h1 {
         font-size: 1.8rem;

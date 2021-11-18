@@ -15,7 +15,6 @@
 }
 .header {
   height: 450px;
-  background-color: #f6f6f6;
 }
 .header__logo {
   position: relative;
@@ -52,7 +51,7 @@
   border-top-left-radius: 40px;
   border-top-right-radius: 40px;
   position: relative;
-  top: -35px;
+  top: -40px;
 }
 .header__title h1 {
   font-size: 1.8rem;
@@ -126,7 +125,8 @@ footer span {
 /*--------General----------*/
 body {
   margin: 0;
-  /* box-sizing: border-box; */
+  background-color: #f6f6f6;
+  box-sizing: border-box;
 }
 
 * {
