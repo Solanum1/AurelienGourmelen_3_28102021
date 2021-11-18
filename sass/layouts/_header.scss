@@ -39,7 +39,11 @@
     }
     &__title h1 {
         font-size: 1.8rem;
+        font-weight: 300;
         margin-top: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; 
     }
     &__title i {
         padding-top: 3px;
