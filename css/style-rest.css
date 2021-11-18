@@ -14,6 +14,7 @@
   font-style: normal;
 }
 .header {
+  height: 450px;
   background-color: #f6f6f6;
 }
 .header__logo {
@@ -23,16 +24,52 @@
   margin: 0 50px;
 }
 .header__logo img {
-  width: 150px;
+  width: 180px;
   height: auto;
+  padding-bottom: 10px;
 }
 .header__back {
   position: relative;
-  left: 15px;
-  top: 30px;
+  font-size: 20px;
+  left: 20px;
+  top: 35px;
 }
 .header__back a {
   color: #000;
+}
+.header__banner img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  margin-top: -20px;
+}
+.header__title {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 40px 0 25px;
+  border: 1px solid #f6f6f6;
+  background-color: #f6f6f6;
+  border-top-left-radius: 40px;
+  border-top-right-radius: 40px;
+  position: relative;
+  top: -35px;
+}
+.header__title h1 {
+  font-size: 1.8rem;
+  margin-top: 0;
+}
+.header__title i {
+  padding-top: 3px;
+  font-size: 24px;
+  font-weight: 100;
+  cursor: pointer;
+}
+.header__title i:hover:before {
+  transition: all 500ms ease-in-out;
+  background-image: linear-gradient(#9356DC, #FF79DA);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
 }
 
 footer {
@@ -86,6 +123,7 @@ footer span {
   padding-right: 10px;
 }
 
+/*--------General----------*/
 body {
   margin: 0;
   /* box-sizing: border-box; */
@@ -101,29 +139,6 @@ h1 {
 
 main {
   background-color: #f6f6f6;
-}
-
-/*----------Heading----------*/
-.heading__top img {
-  min-height: 220px;
-  width: 100%;
-  object-fit: cover;
-  margin-top: -20px;
-}
-.heading__title {
-  display: flex;
-  justify-content: space-between;
-  padding: 30px 20px 0 20px;
-  border: 1px solid #f6f6f6;
-  background-color: #f6f6f6;
-  border-top-left-radius: 40px;
-  border-top-right-radius: 40px;
-  position: relative;
-  top: -30px;
-}
-.heading__title h1 {
-  font-size: 1.6em;
-  margin-top: 0;
 }
 
 /*--------Menu----------*/

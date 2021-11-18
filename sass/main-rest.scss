@@ -4,6 +4,9 @@
 @import "./layouts/header";
 @import "./layouts/footer";
 
+
+/*--------General----------*/
+
 body {
     margin: 0;
     /* box-sizing: border-box; */
@@ -14,38 +17,9 @@ body {
 h1 {
     font-family: 'shrikhandregular', sans-serif ;
 }
-
-
 main {
     background-color: $color-lite-gray;
 }
-
-/*----------Heading----------*/
-
-.heading {
-    &__top img{
-        min-height: 220px;
-        width: 100%; 
-        object-fit: cover;
-        margin-top: -20px;
-    }
-    &__title {
-        display: flex;
-        justify-content: space-between;
-        padding: 30px 20px 0 20px;
-        border: 1px solid $color-lite-gray;
-        background-color: $color-lite-gray;
-        border-top-left-radius: 40px;
-        border-top-right-radius: 40px;
-        position: relative;
-        top: -30px;
-    }
-    &__title h1 {
-        font-size: 1.6em;
-        margin-top: 0;
-    }
-}
-
 /*--------Menu----------*/
 
 .menu {
