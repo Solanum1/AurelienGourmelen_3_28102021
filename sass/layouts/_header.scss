@@ -1,20 +1,64 @@
 .header {
-    background-color: $color-lite-gray;
+    height: 450px;
     &__logo {
         position: relative;
         top: -10px;
         text-align: center;
+        margin : 0 50px;
     }
     &__logo img {
-        width: 150px;
+        width: 180px;
         height: auto;
+        padding-bottom: 10px;
     }
     &__back {
         position: relative;
-        left: 15px;
-        top: 30px;
+        font-size: 20px;
+        left: 20px;
+        top: 35px;
     }
     &__back a {
         color: $color-black;
     }
+    &__banner img{
+        height: 300px;
+        width: 100%; 
+        object-fit: cover;
+        margin-top: -20px;
+    }
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        padding: 40px 40px 0 25px;
+        border: 1px solid $color-lite-gray;
+        background-color: $color-lite-gray;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        position: relative;
+        top: -40px;
+    }
+    &__title h1 {
+        font-size: 1.8rem;
+        font-weight: 300;
+        margin-top: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; 
+    }
+    &__title i {
+        padding-top: 3px;
+        font-size: 24px;
+        font-weight: 100;
+        cursor: pointer;
+            &:hover:before { 
+            transition: all 500ms ease-in-out;
+            background-image: linear-gradient($color-primary, $color-secondary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: bold;
+        }
+    }
 }
+
+
+
