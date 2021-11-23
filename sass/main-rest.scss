@@ -46,7 +46,6 @@ main {
     cursor: pointer;
     &:hover > .menu-check{
         width:85px;
-        opacity:1;  
         animation: slide 500ms linear;
         transform-origin:right;
         span{
@@ -56,15 +55,16 @@ main {
 }
 
 .menu-card{
-    flex: 2;
     width: 100%;
     white-space:nowrap;
     text-overflow:ellipsis;
     overflow: hidden;
-    padding: 0.3rem 0.8rem;
+    padding: 5px 15px;
     &__title {
+        font-size: 18px;
         font-weight: bold;
-        padding-bottom: 5px;
+        padding-top: 5px;
+        padding-bottom: 3px;
         white-space:nowrap;
         overflow:hidden;
         text-overflow:ellipsis;
@@ -77,11 +77,11 @@ main {
         text-overflow:ellipsis;
     }
     &__description {
-        font-size: 0.9em;
+        font-size: 14px;
     }
     &__price {
         font-weight: bold;
-        font-size: 0.9em;
+        font-size: 16px;
         padding-right: 10px;
     }
 }
@@ -91,7 +91,7 @@ main {
 .menu-check {
     width: 0%;
     height: 70px;
-    font-size: 20px;
+    font-size: 22px;
     background-color: $color-tertiary;
     color: $color-white;
     display: flex;
@@ -106,9 +106,9 @@ main {
         transition:transform 300ms ease-in-out 150ms; 
     }
     &:hover {
-        width: 85px;
-        max-width: 85px;
-        border-radius: 0rem 15px 15px 0rem;
+        width: 65px;
+        max-width: 65px;
+        border-radius: 0 15px 15px 0;
         animation: slide 500ms linear;
         span {
             transform:rotate(1turn);
@@ -116,7 +116,7 @@ main {
     }
     &:not(:hover){
         animation: slide-return 300ms linear;
-        border-radius: 0rem 15px 15px 0rem;
+        border-radius: 0 15px 15px 0;
     }
 }
 @keyframes slide{
@@ -124,13 +124,13 @@ main {
         width:0%;
     }
     100%{
-        width:85px;
+        width:65px;
     }
 }
 
 @keyframes slide-return{
     0%{
-        width:85px;
+        width:65px;
     }
     100%{
         width:0%;
