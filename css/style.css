@@ -169,7 +169,7 @@ input:focus {
 
 /*----------Working----------*/
 .working__container {
-  margin: auto;
+  padding: 20px 0 20px 0;
 }
 .working__container h2 {
   padding-left: 5%;
@@ -184,12 +184,19 @@ input:focus {
 .working__step {
   display: flex;
   flex-direction: column;
+  padding: 0 20px 0 20px;
+  justify-content: center;
+  align-items: center;
 }
 @media (min-width: 768px) {
   .working__step {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+  }
+}
+@media (min-width: 992px) {
+  .working__step {
+    justify-content: space-around;
   }
 }
 
@@ -198,18 +205,21 @@ input:focus {
   flex-direction: row;
   background-color: #f6f6f6;
   padding: 20px 0 20px 0;
-  margin: 0 10% 30px 5%;
+  margin-bottom: 30px;
   border-radius: 20px;
   box-shadow: 5px 5px 5px #eaeaea;
-  width: 350px;
+  width: 100%;
+  max-width: 500px;
   cursor: pointer;
   transform: scale(1);
-  transition: transform 500ms;
+  transition: transform 500ms ease-in-out;
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .working {
-    width: 300px;
-    margin: 0 3% 30px 3%;
+    margin-left: 5px;
+    margin-right: 5px;
+    width: 100%;
+    max-width: 350px;
   }
 }
 .working:hover {
@@ -255,6 +265,9 @@ input:focus {
 .restaurants-cards {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px 0 20px;
 }
 @media (min-width: 768px) {
   .restaurants-cards {
@@ -265,14 +278,16 @@ input:focus {
 }
 
 .card {
-  width: 350px;
+  width: 100%;
+  max-width: 500px;
   background-color: #fff;
   border-radius: 20px;
   margin-left: 5%;
+  margin-right: 5%;
   margin-bottom: 30px;
   box-shadow: 5px 5px 3px #eaeaea;
   transform: scale(1);
-  transition: transform 500ms;
+  transition: transform 500ms ease-in-out;
 }
 .card:hover {
   transform: scale(1.05);
@@ -294,12 +309,23 @@ input:focus {
   font-size: 0.9em;
 }
 .card__image img {
-  width: 350px;
+  width: 100%;
   height: 200px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
   object-fit: cover;
+}
+.card__image--1 img {
+  object-position: 50% 75%;
+}
+.card__image--2 img {
+  object-position: 50% 60%;
+}
+.card__image--3 img {
   object-position: 50% 80%;
+}
+.card__image--4 img {
+  object-position: 50% 70%;
 }
 .card__new {
   background-color: #99E2D0;
@@ -307,7 +333,7 @@ input:focus {
   padding: 5px 8px;
   position: relative;
   top: -205px;
-  left: 65px;
+  left: 90px;
   text-align: center;
 }
 .card__new span {
@@ -328,11 +354,14 @@ input:focus {
 }
 .card__title h3 {
   margin: 10px 0 0 0;
-  font-size: 16px;
+  font-size: 18px;
+}
+.card__place {
+  padding-top: 5px;
 }
 .card__place p {
+  font-size: 16px;
   margin-top: 0;
-  font-size: 1em;
 }
 .card__like i {
   font-weight: 100;

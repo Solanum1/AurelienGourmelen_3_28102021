@@ -167,7 +167,7 @@ main {
   cursor: pointer;
 }
 .menu-container:hover > .menu-check {
-  width: 85px;
+  width: 70px;
   animation: slide 500ms linear;
   transform-origin: right;
 }
@@ -227,8 +227,8 @@ main {
   transition: transform 300ms ease-in-out 150ms;
 }
 .menu-check:hover {
-  width: 65px;
-  max-width: 65px;
+  width: 70px;
+  max-width: 70px;
   border-radius: 0 15px 15px 0;
   animation: slide 500ms linear;
 }
@@ -245,12 +245,12 @@ main {
     width: 0%;
   }
   100% {
-    width: 65px;
+    width: 70px;
   }
 }
 @keyframes slide-return {
   0% {
-    width: 65px;
+    width: 70px;
   }
   100% {
     width: 0%;

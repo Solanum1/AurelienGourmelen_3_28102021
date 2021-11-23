@@ -47,7 +47,7 @@ body {
     align-items: center;
     padding-bottom: 50px;
     &__search {
-        background-color: #eaeaea;
+        background-color: $color-lite-gray-2;
         border-top: 2px solid rgba(128, 128, 128, 0.33);
         font-size: 14px;
         text-align: center;
@@ -61,7 +61,7 @@ body {
         margin-left: 50px;
     }
     &__search input {
-        background-color: #eaeaea;
+        background-color: $color-lite-gray-2;
         border: none;
         font-size: 16px;
     }
@@ -111,7 +111,7 @@ input:focus {
 /*----------Working----------*/
 
 .working__container {
-    margin: auto;
+    padding: 20px 0 20px 0;
     & h2 {
         padding-left: 5%;
         @include medium {
@@ -124,10 +124,15 @@ input:focus {
 .working__step {
     display: flex;
     flex-direction: column;
+    padding: 0 20px 0 20px;
+    justify-content: center;
+    align-items: center;
     @include medium {
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: center;
+    }
+    @include large {
+        justify-content: space-around;
     }
 }
 
@@ -136,17 +141,20 @@ input:focus {
     flex-direction: row;
     background-color: $color-lite-gray;
     padding: 20px 0 20px 0;
-    margin: 0 10% 30px 5%;
+    margin-bottom: 30px;
     border-radius: 20px;
-    box-shadow: 5px 5px 5px #eaeaea;
-    width: 350px;
+    box-shadow: 5px 5px 5px $color-lite-gray-2;
+    width: 100%;
+    max-width: 500px;
     cursor: pointer;
     transform: scale(1);
-    transition: transform 500ms;
-        @include medium {
-            width: 300px;
-            margin: 0 3% 30px 3%;
-        }
+    transition: transform 500ms ease-in-out;
+    @include large {
+        margin-left: 5px;
+        margin-right: 5px;
+        width: 100%;
+        max-width: 350px;
+    }
     &:hover{
         transform: scale(1.05);
         background-color: lighten($color-primary, 35%);
@@ -189,6 +197,9 @@ input:focus {
 .restaurants-cards {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px 0 20px;
     @include medium {
         flex-direction: row;
         flex-wrap: wrap;
@@ -197,14 +208,16 @@ input:focus {
 }
 
 .card {
-    width: 350px;
+    width: 100%;
+    max-width: 500px;
     background-color: $color-white;
     border-radius: 20px;
     margin-left: 5%;
+    margin-right: 5%;
     margin-bottom: 30px;
-    box-shadow: 5px 5px 3px #eaeaea;
+    box-shadow: 5px 5px 3px $color-lite-gray-2;
     transform: scale(1);
-    transition: transform 500ms;
+    transition: transform 500ms ease-in-out;
     &:hover {
         transform: scale(1.05);
         box-shadow: 5px 5px 5px $color-gray;
@@ -221,12 +234,25 @@ input:focus {
         font-size: 0.9em;
     }
     &__image img {
-        width: 350px;
+        width: 100%;
         height: 200px;
         border-top-left-radius: 20px;
         border-top-right-radius: 20px;
         object-fit: cover;
-        object-position: 50% 80%;
+    }
+    &__image {
+        &--1 img {
+            object-position: 50% 75%;
+        }
+        &--2 img {
+            object-position: 50% 60%;
+        }
+        &--3 img {
+            object-position: 50% 80%;
+        }
+        &--4 img {
+            object-position: 50% 70%;
+        }
     }
     &__new {
         background-color: $color-tertiary;
@@ -234,7 +260,7 @@ input:focus {
         padding: 5px 8px;
         position: relative;
         top: -205px;
-        left: 65px;
+        left: 90px;
         text-align: center;
     }
     &__new span {
@@ -256,11 +282,14 @@ input:focus {
     }
     &__title h3 {    
         margin: 10px 0 0 0;
-        font-size: 16px;
+        font-size: 18px;
+    }
+    &__place {
+        padding-top: 5px;
     }
     &__place p {
+        font-size: 16px;
         margin-top: 0;
-        font-size: 1em;
     }
     &__like i {
         font-weight:100;
@@ -268,7 +297,7 @@ input:focus {
         padding: 5px;
         margin: 10px 15px 25px 10px;
         cursor: pointer;
-            &:hover::before { 
+        &:hover::before { 
             background-image: linear-gradient($color-primary, $color-secondary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;

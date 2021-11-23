@@ -40,12 +40,12 @@ main {
     margin: 15px;
     height: 70px;
     cursor: pointer;
-    box-shadow: 5px 5px 5px #eaeaea;
+    box-shadow: 5px 5px 5px $color-lite-gray-2;
     display: flex;
     justify-content: space-between;
     cursor: pointer;
     &:hover > .menu-check{
-        width:85px;
+        width:70px;
         animation: slide 500ms linear;
         transform-origin:right;
         span{
@@ -106,8 +106,8 @@ main {
         transition:transform 300ms ease-in-out 150ms; 
     }
     &:hover {
-        width: 65px;
-        max-width: 65px;
+        width: 70px;
+        max-width: 70px;
         border-radius: 0 15px 15px 0;
         animation: slide 500ms linear;
         span {
@@ -124,13 +124,13 @@ main {
         width:0%;
     }
     100%{
-        width:65px;
+        width:70px;
     }
 }
 
 @keyframes slide-return{
     0%{
-        width:65px;
+        width:70px;
     }
     100%{
         width:0%;
