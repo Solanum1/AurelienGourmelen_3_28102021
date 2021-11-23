@@ -36,25 +36,45 @@ main {
 
 .menu-container {
     background-color: $color-white;
-    padding: 10px 3% 10px 3%;
     border-radius: 15px;
-    margin: 10px 5% 15px 5%;
-    height: 50px;
+    margin: 15px;
+    height: 70px;
     cursor: pointer;
     box-shadow: 5px 5px 5px #eaeaea;
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
+    &:hover > .menu-check{
+        width:85px;
+        opacity:1;  
+        animation: slide 500ms linear;
+        transform-origin:right;
+        span{
+            transform:rotate(1turn);
+            }
+    }
 }
 
 .menu-card{
     flex: 2;
+    width: 100%;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    overflow: hidden;
+    padding: 0.3rem 0.8rem;
     &__title {
         font-weight: bold;
         padding-bottom: 5px;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
     }
     &__bottom {
         display: flex;
         justify-content: space-between;
+        white-space:nowrap;
+        overflow:hidden;
+        text-overflow:ellipsis;
     }
     &__description {
         font-size: 0.9em;
@@ -66,34 +86,59 @@ main {
     }
 }
 
+/*----------Slide Check----------*/
+
 .menu-check {
     width: 0%;
     height: 70px;
-    margin: 0;
-    padding: 0;
+    font-size: 20px;
     background-color: $color-tertiary;
     color: $color-white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 15px;
-    transition: transform 1000ms ease-in-out;
+    cursor: pointer;
     span {
+        overflow: hidden;
         display:block;
         transform:rotate(0turn);
         transition:transform 300ms ease-in-out 150ms; 
     }
     &:hover {
-        width: 45px;
-        /* transform: translateX(-45px); */
+        width: 85px;
+        max-width: 85px;
+        border-radius: 0rem 15px 15px 0rem;
+        animation: slide 500ms linear;
         span {
             transform:rotate(1turn);
         }
     }
+    &:not(:hover){
+        animation: slide-return 300ms linear;
+        border-radius: 0rem 15px 15px 0rem;
+    }
+}
+@keyframes slide{
+    0%{ 
+        width:0%;
+    }
+    100%{
+        width:85px;
+    }
+}
+
+@keyframes slide-return{
+    0%{
+        width:85px;
+    }
+    100%{
+        width:0%;
+    }
 }
 
 
-/*----------Button----------*/
+/*----------Order Button----------*/
 .button {
     width: 200px;
     text-align: center;

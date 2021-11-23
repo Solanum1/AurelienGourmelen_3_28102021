@@ -268,14 +268,12 @@ input:focus {
         padding: 5px;
         margin: 10px 15px 25px 10px;
         cursor: pointer;
-            &:hover:before { 
-            transition: all 500ms ease-in-out;
+            &:hover::before { 
             background-image: linear-gradient($color-primary, $color-secondary);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight:bold;
+            transition: all 500ms ease-in-out;
         }
-    }
-
-
+    }    
 }
