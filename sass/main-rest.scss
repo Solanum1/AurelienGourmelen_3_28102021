@@ -22,6 +22,13 @@ main {
     background-color: $color-lite-gray;
 }
 /*--------Menu----------*/
+.all__menu {
+    @include x-large {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
 
 .menu {
     & h2 {
@@ -44,13 +51,56 @@ main {
     display: flex;
     justify-content: space-between;
     cursor: pointer;
+    animation: appear 1350ms forwards;
+    transform-origin:top;
+    opacity:0;
     &:hover > .menu-check{
-        width:70px;
+        width: 70px;
         animation: slide 500ms linear;
         transform-origin:right;
         span{
             transform:rotate(1turn);
             }
+        @include x-large {
+        width: 100%; 
+        }
+    }
+    &--1 {
+        animation-delay: 150ms;
+    }
+    &--2 {
+        animation-delay: 300ms;
+    }
+    &--3 {
+        animation-delay: 450ms;
+    }
+    &--4 {
+        animation-delay: 600ms;
+    }
+    &--5 {
+        animation-delay: 750ms;
+    }
+    &--6 {
+        animation-delay: 900ms;
+    }
+    &--7 {
+        animation-delay: 1050ms;
+    }
+    &--8 {
+        animation-delay: 1200ms;
+    }
+    &--9 {
+        animation-delay: 1350ms;
+    }
+}
+
+@keyframes appear{
+    from{
+        transform :scaley(1) translatey(50%);
+    }
+    to{
+        transform :scaley(1) translatey(0);
+        opacity:1;
     }
 }
 
@@ -61,7 +111,7 @@ main {
     overflow: hidden;
     padding: 5px 15px;
     &__title {
-        font-size: 18px;
+        font-size: 16px;
         font-weight: bold;
         padding-top: 5px;
         padding-bottom: 3px;
@@ -81,8 +131,11 @@ main {
     }
     &__price {
         font-weight: bold;
-        font-size: 16px;
+        font-size: 15px;
         padding-right: 10px;
+    }
+    @include x-large {
+        min-width: 250px;
     }
 }
 
@@ -106,8 +159,6 @@ main {
         transition:transform 300ms ease-in-out 150ms; 
     }
     &:hover {
-        width: 70px;
-        max-width: 70px;
         border-radius: 0 15px 15px 0;
         animation: slide 500ms linear;
         span {

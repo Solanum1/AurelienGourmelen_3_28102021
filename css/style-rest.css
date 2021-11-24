@@ -146,6 +146,14 @@ main {
 }
 
 /*--------Menu----------*/
+@media (min-width: 992px) {
+  .all__menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
 .menu h2 {
   font-size: 1.2em;
   text-transform: uppercase;
@@ -165,6 +173,9 @@ main {
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+  animation: appear 1350ms forwards;
+  transform-origin: top;
+  opacity: 0;
 }
 .menu-container:hover > .menu-check {
   width: 70px;
@@ -174,7 +185,48 @@ main {
 .menu-container:hover > .menu-check span {
   transform: rotate(1turn);
 }
+@media (min-width: 992px) {
+  .menu-container:hover > .menu-check {
+    width: 100%;
+  }
+}
+.menu-container--1 {
+  animation-delay: 150ms;
+}
+.menu-container--2 {
+  animation-delay: 300ms;
+}
+.menu-container--3 {
+  animation-delay: 450ms;
+}
+.menu-container--4 {
+  animation-delay: 600ms;
+}
+.menu-container--5 {
+  animation-delay: 750ms;
+}
+.menu-container--6 {
+  animation-delay: 900ms;
+}
+.menu-container--7 {
+  animation-delay: 1050ms;
+}
+.menu-container--8 {
+  animation-delay: 1200ms;
+}
+.menu-container--9 {
+  animation-delay: 1350ms;
+}
 
+@keyframes appear {
+  from {
+    transform: scaley(1) translatey(50%);
+  }
+  to {
+    transform: scaley(1) translatey(0);
+    opacity: 1;
+  }
+}
 .menu-card {
   width: 100%;
   white-space: nowrap;
@@ -183,7 +235,7 @@ main {
   padding: 5px 15px;
 }
 .menu-card__title {
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
   padding-top: 5px;
   padding-bottom: 3px;
@@ -203,8 +255,13 @@ main {
 }
 .menu-card__price {
   font-weight: bold;
-  font-size: 16px;
+  font-size: 15px;
   padding-right: 10px;
+}
+@media (min-width: 992px) {
+  .menu-card {
+    min-width: 250px;
+  }
 }
 
 /*----------Slide Check----------*/
@@ -227,8 +284,6 @@ main {
   transition: transform 300ms ease-in-out 150ms;
 }
 .menu-check:hover {
-  width: 70px;
-  max-width: 70px;
   border-radius: 0 15px 15px 0;
   animation: slide 500ms linear;
 }
