@@ -217,6 +217,9 @@ main {
 .menu-container--9 {
   animation-delay: 1350ms;
 }
+.menu-container--10 {
+  animation-delay: 525ms;
+}
 
 @keyframes appear {
   from {
