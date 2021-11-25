@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch ./sass/main.scss:./css/style.css ./sass/main-rest.scss:./css/style-rest.css"
+    "sass": "sass --watch ./sass/main.scss:./css/style.css ./sass/main-rest.scss:./css/style-rest.css",
+    "prefix": "postcss ./css/style.css ./css/style-rest.css --use autoprefixer -d ./css/prefixed/"
   },
   "repository": {
     "type": "git",
@@ -12,6 +13,7 @@
   },
   "author": "aurelien",
   "license": "ISC",
+  "browserslist": "last 4 versions",
   "bugs": {
     "url": "https://github.com/Solanum1/AurelienGourmelen_3_28102021/issues"
   },
