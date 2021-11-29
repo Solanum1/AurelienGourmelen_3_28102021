@@ -64,6 +64,120 @@ footer span {
   padding-right: 10px;
 }
 
+.container-loader {
+  background-color: #f6f6f6;
+  height: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  animation: loader 0s 3000ms both;
+  -webkit-animation: loader 0s 3000ms both;
+}
+
+.loader {
+  width: 50px;
+  height: 50px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+
+.loader-title {
+  font-size: 36px;
+  padding-left: 15px;
+  font-family: "shrikhandregular", sans-serif;
+  background: linear-gradient(to right, #9356DC, #FF79DA);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: perspective 3000ms 150ms;
+}
+
+.loader-circles {
+  border-radius: 50px;
+  border: 5px solid transparent;
+  border-top-color: #9356DC;
+  animation: spin 1000ms linear infinite;
+  -webkit-animation: spin 1000ms linear infinite;
+}
+
+.loader-circles::after {
+  content: "";
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  bottom: 5px;
+  right: 5px;
+  border-radius: 50px;
+  border: 5px solid transparent;
+  border-top-color: #FF79DA;
+  opacity: 0.8;
+  animation: spin 1400ms linear infinite;
+  -webkit-animation: spin 1400ms linear infinite;
+}
+
+.loader-circles::before {
+  content: "";
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  bottom: 12px;
+  right: 12px;
+  border-radius: 50px;
+  border: 5px solid transparent;
+  border-top-color: #99E2D0;
+  opacity: 0.5;
+  animation: spin 1800ms linear infinite;
+  -webkit-animation: spin 1800ms linear infinite;
+}
+
+.all-content {
+  animation: after-loading 0ms 3000ms backwards;
+  -webkit-animation: after-loading 0ms 3000ms backwards;
+}
+
+@keyframes loader {
+  0% {
+    visibility: visible;
+    height: 700px;
+    padding-bottom: 300px;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+@keyframes after-loading {
+  0% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+@keyframes perspective {
+  0% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.2);
+  }
+  70% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 /*----------General----------*/
 h1 {
   font-family: "shrikhandregular", sans-serif;
