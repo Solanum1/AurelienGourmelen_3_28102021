@@ -1,16 +1,16 @@
+@import "./vendors/normalize";
 @import "./base/typography";
 @import "./utils/variables";
 @import "./utils/mixin";
 @import "./layouts/header";
 @import "./layouts/footer";
+@import "./components/buttons";
 
 
 /*--------General----------*/
 
-body {
-    margin: 0;
+body, main {
     background-color: $color-lite-gray;
-    box-sizing: border-box;
 }
 * {
     font-family: 'robotoregular', sans-serif;
@@ -18,9 +18,7 @@ body {
 h1 {
     font-family: 'shrikhandregular', sans-serif ;
 }
-main {
-    background-color: $color-lite-gray;
-}
+
 /*--------Menu----------*/
 .all__menu {
     @include x-large {
@@ -31,6 +29,9 @@ main {
 }
 
 .menu {
+    @include x-large {
+        width: 400px;
+    }
     & h2 {
         font-size: 1.2em;
         text-transform: uppercase ;
@@ -50,14 +51,13 @@ main {
     box-shadow: 5px 5px 5px $color-lite-gray-2;
     display: flex;
     justify-content: space-between;
-    cursor: pointer;
     animation: appear 1350ms forwards;
     transform-origin:top;
     opacity:0;
     &:hover > .menu-check{
         width: 70px;
         animation: slide 500ms linear;
-        transform-origin:right;
+        transform-origin: right;
         span{
             transform:rotate(1turn);
             }
@@ -109,8 +109,8 @@ main {
 
 .menu-card{
     width: 100%;
-    white-space:nowrap;
-    text-overflow:ellipsis;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     overflow: hidden;
     padding: 5px 15px;
     &__title {
@@ -118,19 +118,19 @@ main {
         font-weight: bold;
         padding-top: 5px;
         padding-bottom: 3px;
-        white-space:nowrap;
-        overflow:hidden;
-        text-overflow:ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     &__bottom {
         display: flex;
         justify-content: space-between;
-        white-space:nowrap;
-        overflow:hidden;
-        text-overflow:ellipsis;
     }
     &__description {
         font-size: 14px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
     }
     &__price {
         font-weight: bold;
@@ -138,7 +138,7 @@ main {
         padding-right: 10px;
     }
     @include x-large {
-        min-width: 250px;
+        min-width: 280px;
     }
 }
 
@@ -181,7 +181,6 @@ main {
         width:70px;
     }
 }
-
 @keyframes slide-return{
     0%{
         width:70px;
@@ -191,26 +190,7 @@ main {
     }
 }
 
-
-/*----------Order Button----------*/
-.button {
-    width: 200px;
-    text-align: center;
-    padding: 12px;
-    margin: auto;
-    margin-top: 30px;
-    margin-bottom: 50px;
-    border-radius: 20px;
-    background: linear-gradient($color-secondary, $color-primary);
-    background-color: $color-secondary;
-    color: $color-white;
-    cursor: pointer;
-    box-shadow: 5px 5px 5px $color-middle-gray;
-    transform: scale(1);
-    transition: all 500ms;
-    &:hover {
-        transform: scale(1.05);
-        box-shadow: 5px 5px 5px $color-gray; 
-        background: linear-gradient(lighten($color-secondary, 5%), lighten($color-primary, 5%));
-    }
+.button--margin {
+    margin-top: 40px;
+    margin-bottom: 60px;
 }

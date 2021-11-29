@@ -1,0 +1,22 @@
+.button {
+    width: 200px;
+    text-align: center;
+    padding: 12px;
+    margin-top: 30px;
+    margin-right: auto;
+    margin-bottom: 30px;
+    margin-left: auto;
+    border-radius: 20px;
+    background: linear-gradient($color-secondary, $color-primary);
+    background-color: $color-secondary;
+    color: $color-white;
+    cursor: pointer;
+    box-shadow: 5px 5px 5px $color-middle-gray;
+    transform: scale(1);
+    transition: all 500ms;
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 5px 5px 5px $color-gray; 
+        background: linear-gradient(lighten($color-secondary, 5%), lighten($color-primary, 5%));
+    }
+}
