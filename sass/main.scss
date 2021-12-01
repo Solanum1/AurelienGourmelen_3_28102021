@@ -1,13 +1,14 @@
+@import "./vendors/normalize";
 @import "./base/typography";
 @import "./utils/variables";
 @import "./utils/mixin";
 @import "./layouts/footer";
 @import "./components/loader";
+@import "./components/buttons";
 
 
 
 /*----------General----------*/
-
 
 h1 {
     font-family: 'shrikhandregular', sans-serif ;
@@ -15,11 +16,6 @@ h1 {
 
 p, a, span, input, h2, h3, h4, h5, h6 {
     font-family: 'robotoregular', sans-serif;
-}
-
-body {
-    margin: 0;
-    box-sizing: border-box;
 }
 
 /*----------Header----------*/
@@ -41,7 +37,7 @@ body {
 /*----------Location----------*/
 
 .location {
-    background-color: #f6f6f6;
+    background-color: $color-lite-gray;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -49,7 +45,8 @@ body {
     padding-bottom: 50px;
     &__search {
         background-color: $color-lite-gray-2;
-        border-top: 2px solid rgba(128, 128, 128, 0.33);
+        border-top: 2px solid;
+        border-top-color: lighten($color-gray, 33%);
         font-size: 14px;
         text-align: center;
         padding: 10px 0 10px 0;
@@ -74,40 +71,23 @@ body {
         margin-left: 15%;
         margin-right: 15%;
     }
-    &__heading p{
+    &__heading p {
         margin-bottom: 0;
     }
     &__slogan {
         text-align: center;
         font-size: 16px;
         font-weight: normal;
-        color:rgba(128, 128, 128);
+        color: $color-gray;
         padding-bottom: 20px;
         margin-left: 10%;
         margin-right: 10%;
-    }
-    &__button {
-        padding: 12px;
-        border-radius: 20px;
-        background: linear-gradient($color-secondary, $color-primary);
-        background-color: $color-secondary;
-        color: $color-white;
-        cursor: pointer;
-        box-shadow: 5px 5px 5px $color-middle-gray;
-        transform: scale(1);
-        transition: all 500ms;
-        &:hover {
-            transform: scale(1.05);
-            box-shadow: 5px 5px 5px $color-gray; 
-            background: linear-gradient(lighten($color-secondary, 5%), lighten($color-primary, 5%));
-        }
     }
 }
 
 input:focus {
     outline: none;
 }
-
 
 /*----------Working----------*/
 
@@ -169,14 +149,14 @@ input:focus {
         width: 27px;
         border-radius: 50%;
         background-color: $color-primary;
-        color:$color-white;
+        color: $color-white;
         text-align: center;
         position : relative;
         right: 10px;
         padding-top: 3px;
     }
     &__fas {
-        color: #7e7e7e;
+        color: $color-gray-fas;
         font-size: 18px;
         padding: 0 25px 0 15px;
     }
@@ -184,7 +164,7 @@ input:focus {
 
 /*----------Restaurants----------*/
 .restaurants-container {
-    background: #f6f6f6;
+    background: $color-lite-gray;
     padding: 20px 0 20px 0;
     & h2 {
         margin-left: 5%;
@@ -256,20 +236,15 @@ input:focus {
         }
     }
     &__new {
-        background-color: $color-tertiary;
         width: 70px;
         padding: 5px 8px;
-        position: relative;
-        top: -205px;
-        left: 90px;
+        position: absolute;
+        top: 15px;
+        right: 15px;
         text-align: center;
-    }
-    &__new span {
+        background-color: $color-tertiary;
         color: darken($color-tertiary, 40%);
         font-weight: 600;
-        margin: 0;
-        padding: 0;
-
     }
     &__bottom {
         display: flex;
@@ -300,6 +275,7 @@ input:focus {
         cursor: pointer;
         &:hover::before { 
             background-image: linear-gradient($color-primary, $color-secondary);
+            background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight:bold;
